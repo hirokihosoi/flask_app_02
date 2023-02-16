@@ -11,7 +11,7 @@ def predict(img):
     #ネットワークの準備
     net = Net().cpu().eval()
     #学習済みモデルの重みを読み込み
-    net.load_state_dict(torch.load('./src/apple.pt', map_location=torch.device('cpu')))
+    net.load_state_dict(torch.load('./apple.pt', map_location=torch.device('cpu')))
     #データ前処理
     img = transform(img)
     img = img.unsqueeze(0) #1次元増やす
